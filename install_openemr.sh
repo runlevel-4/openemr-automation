@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Check if Debain is installed.  If it is, install the php repositories
 if grep -q Debian "/etc/os-release" ; then
 	echo "Debian is installed"
 	echo
@@ -14,16 +15,21 @@ else
 	echo "Not Debian...continuing"
 fi
 
+# Start updates
 echo "Performing updates"
 sudo apt update && sudo apt upgrade -y
 echo
 echo "DONE"
 echo
+
+#Install web services
 echo "Installing web components"
 sudo apt install apache2 mariadb-common mariadb-server php7.4 php7.4-common php7.4-mysql php7.4-xml php7.4-mbstring unzip -y
 echo
 echo "DONE"
 echo
+
+# Downloading and installing OpenEMR
 echo "Downloading OpenEMR"
 echo
 wget https://sourceforge.net/projects/openemr/files/latest/download/openemr-6.0.0.tar.gz
@@ -35,6 +41,8 @@ sudo systemctl restart apache2
 echo
 echo "DONE"
 echo
+
+# Start MySQL config
 echo "Just hit Enter:"
 echo
 sudo mariadb -u root -p < $HOME/openemr-automation/set_mariadb_root.sql
