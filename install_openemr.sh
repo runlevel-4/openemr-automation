@@ -24,7 +24,7 @@ echo
 
 #Install web services
 echo "Installing web components"
-sudo apt install apache2 mariadb-common mariadb-server php7.4 php7.4-common php7.4-mysql php7.4-xml php7.4-mbstring unzip -y
+sudo apt install apache2 mariadb-common mariadb-server php8.0 php8.0-common php8.0-mysql php8.0-xml php8.0-mbstring unzip -y
 echo
 echo "DONE"
 echo
