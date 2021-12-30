@@ -13,6 +13,11 @@ if grep -q Debian "/etc/os-release" ; then
   echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php7.list
 else
 	echo "Not Debian...continuing"
+	
+	# Add the PHP 8.0 repo for Ubuntu
+	sudo apt install ca-certificates apt-transport-https software-properties-common -y
+	sudo add-apt-repository ppa:ondrej/php
+	sudo add-apt-repository ppa:ondrej/apache2
 fi
 
 # Start updates
