@@ -29,7 +29,7 @@ echo
 
 #Install web services
 echo "Installing web components"
-sudo apt install apache2 mariadb-common mariadb-server php8.0 php8.0-common php8.0-mysql php8.0-xml php8.0-mbstring unzip -y
+sudo apt install apache2 mariadb-common mariadb-server php7.4 php7.4-common php7.4-mysql php7.4-xml php7.4-mbstring unzip -y
 echo
 echo "DONE"
 echo
@@ -39,7 +39,7 @@ echo "Downloading OpenEMR"
 echo
 wget https://sourceforge.net/projects/openemr/files/latest/download/openemr-6.0.0.tar.gz
 sudo unzip openemr-6.0.0.tar.gz
-sudo mv openemr-5.0.1 openemr
+sudo mv openemr-6.0.0 openemr
 sudo cp -r openemr /var/www/html/
 sudo chown -R www-data: /var/www/html
 sudo systemctl restart apache2
