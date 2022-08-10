@@ -37,9 +37,9 @@ echo
 # Downloading and installing OpenEMR
 echo "Downloading OpenEMR"
 echo
-wget https://sourceforge.net/projects/openemr/files/latest/download/openemr-6.0.0.tar.gz
+wget https://sourceforge.net/projects/openemr/files/latest/download/openemr-7.0.0.tar.gz
 sudo unzip openemr-7.0.0.tar.gz
-sudo mv openemr-5.0.1 openemr
+sudo mv openemr-7.0.0 openemr
 sudo cp -r openemr /var/www/html/
 sudo chown -R www-data: /var/www/html
 sudo systemctl restart apache2
